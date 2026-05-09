@@ -1,0 +1,527 @@
+/* Minimal Professional Design System 2026 - App Privacy Policy Generator */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-deep: #0f172a;
+  --bg-surface: #1e293b;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #0ea5e9;
+  --text-main: #f8fafc;
+  --text-dim: #94a3b8;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --transition-basic: all 0.2s ease;
+  --nav-height: 60px;
+}
+
+body, html {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: 'Outfit', sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  line-height: 1.6;
+  padding-top: var(--nav-height);
+}
+
+/* Navbar Premium */
+.navbar-premium {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand-premium {
+  display: flex;
+  align-items: center;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.navbar-links-premium {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links-premium .nav-link-premium {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navbar-links-premium .nav-link-premium.active {
+  color: var(--accent-primary);
+}
+
+/* Static Background */
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #0f172a;
+}
+
+.container-premium {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Compact Professional Card */
+.glass-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.glass-card-header {
+  padding: 1.5rem 2.5rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.glass-card-content {
+  padding: 1.5rem 2.5rem 2rem;
+}
+
+.glass-card-footer {
+  background: rgba(15, 23, 42, 0.3);
+  border-top: 1px solid var(--border-subtle);
+  padding: 1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Progress System */
+.progress-container {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.step-dot {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  position: relative;
+  z-index: 5;
+}
+
+.step-dot.active {
+  background: var(--accent-primary);
+}
+
+.step-dot.completed {
+  background: var(--accent-secondary);
+}
+
+.progress-bar-fill {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  z-index: 1;
+  transition: width 0.3s ease;
+}
+
+/* Compact Inputs */
+.form-label {
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.form-control, .form-select, .form-check-input {
+  background: #0f172a !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 8px !important;
+  color: var(--text-main) !important;
+  padding: 0.7rem 1rem !important;
+  font-size: 0.9rem !important;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--accent-primary) !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25) !important;
+  background: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* Custom Options & Button Checks */
+.custom-option {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  height: 100%;
+  transition: var(--transition-basic);
+}
+
+.btn-check:checked + .custom-option,
+.custom-option:has(.form-check-input:checked) {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: var(--accent-primary);
+  box-shadow: inset 0 0 0 1px var(--accent-primary);
+}
+
+.custom-option:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.custom-option:active {
+  transform: scale(0.98);
+}
+
+.btn-check:checked + .btn-outline-premium {
+  background: var(--accent-primary) !important;
+  color: white !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Ensure inputs are hidden but accessible */
+.btn-check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+/* Professional Buttons */
+.btn-premium {
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.btn-premium:active {
+  opacity: 0.85;
+}
+
+.btn-outline-premium {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.btn-outline-premium:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Professional Badges */
+.badge-premium {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Third Party Grid */
+.tp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+}
+
+.tp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  min-height: 100px;
+}
+
+.tp-card img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.btn-check:checked + .tp-card img {
+  filter: none;
+  opacity: 1;
+}
+
+/* Navigation Links */
+.nav-link-premium {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.nav-link-premium.active {
+  color: var(--accent-primary);
+}
+
+/* Wizard Step Transition */
+.wizard-step {
+  display: none;
+}
+
+.wizard-step.active {
+  display: block;
+}
+
+/* Result Modal */
+.modal-content-premium {
+  background: #0f172a;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.nav-tabs-premium {
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 1rem;
+}
+
+.nav-tabs-premium .nav-link {
+  color: var(--text-dim);
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  background: transparent !important;
+}
+
+.nav-tabs-premium .nav-link.active {
+  color: var(--accent-primary);
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .container-premium {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 56px;
+  }
+
+  .navbar-premium .container-fluid {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .container-premium {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .glass-card-header {
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+
+  .glass-card-content {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+
+  .glass-card-footer {
+    padding: 1rem 1.25rem;
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .glass-card-footer .nav-link-premium {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+
+  #nextBtn {
+    width: 100%;
+    padding: 0.85rem;
+  }
+
+  #footer-spacer {
+    display: none !important;
+  }
+
+  .tp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .tp-card {
+    min-height: 90px;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .tp-card img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0.4rem;
+  }
+
+  .tp-card span {
+    font-size: 0.7rem !important;
+    line-height: 1.2;
+  }
+
+  .btn-premium, .btn-outline-premium {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  
+  .btn-group.w-100 {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .btn-group.w-100 .btn {
+    width: 100% !important;
+    border-radius: 8px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .display-6 {
+    font-size: 1.75rem;
+  }
+
+  /* Data Safety Grid for Mobile */
+  .row.g-2 > [class*="col-"] {
+    width: 100% !important;
+  }
+
+  .custom-option {
+    padding: 0.85rem;
+  }
+
+  /* Modal Footer for Mobile */
+  .modal-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem !important;
+  }
+
+  .modal-footer .d-flex {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-footer .btn {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-card-header, .glass-card-content, .glass-card-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .navbar-brand-premium span {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-links-premium {
+    display: none;
+  }
+
+  .step-dot {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .badge-premium {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  .tp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Custom Component Improvements */
+.welcome-image {
+  max-height: 240px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  width: auto;
+  margin-bottom: 2rem;
+}
+
+.welcome-text {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scrollable-content {
+  scrollbar-gutter: stable;
+}
+
