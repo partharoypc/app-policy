@@ -23,9 +23,11 @@ This version has been upgraded to meet the highest industry standards for **2026
 
 ### 📁 Structure
 - `index.html`: Main application entry point.
-- `css/premium.css`: Professional minimalist styling.
-- `js/app.js`: Core application engine.
-- `js/thirdpartyservices.min.js`: Monochrome SVG logo data.
+- `assets/css/main.css`: Core professional styling.
+- `assets/js/main.js`: Core application logic.
+- `assets/js/services-data.js`: Third-party service metadata.
+- `assets/images/`: Visual assets and icons.
+- `assets/favicons/`: Browser icons and site manifest.
 
 ---
 [AGPLv3 | Copyright 2017 Nishant Srivastava](LICENSE)
