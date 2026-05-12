@@ -28,6 +28,3 @@ This version has been upgraded to meet the highest industry standards for **2026
 - `assets/js/services-data.js`: Third-party service metadata.
 - `assets/images/`: Visual assets and icons.
 - `assets/favicons/`: Browser icons and site manifest.
-
----
-[AGPLv3 | Copyright 2017 Nishant Srivastava](LICENSE)
